@@ -1,0 +1,191 @@
+	create maven project 
+	
+			Add 4 Dependency
+				cucumber j unit
+				cucumber java
+				selenium java
+				cucumber picocontainer
+
+Cucmber will have 3 major files
+
+		feautre file
+		Step definition  file 
+		Testrunner file 
+
+Feature file will have 
+
+		Feature - will have one feature title .which describes the entire feature of the function or the page
+		Step defintion - which will have all the step of the feature file 
+		Test runner - which helps in running the step definiton file
+
+
+Test Runner	
+		features = {"Features"}, describe the packaeg file of the feature file
+		glue= {"StepDefinition"}, StepDefintion file
+		plugin= {"pretty", "html:Report"},   	//"json ,junit:Report" makes the report looks preety
+		dryRun=false,  // runs only the feautre file 
+		monochrome=true, // the console will  be neat
+		tags={"@shoot"}   // giving tag name to the scenario so that only the particular tag gets executed
+		name=""Logo) //Any sceanrio with the keyword logo will be executed
+		
+		
+Data Table
+		column -0		1			2	3
+	0 row| keyword    | exclude     | min | max |
+   1 row   | i phone 11 | refurbished | 700 | 900 |
+   
+ Scenario Outline : It contains multiples scenario to run 
+ 					it consist of a keyword called Example where the data are provided in the form of data tables
+ 					The parameter must match with the header of the data table 
+ 					
+ 					
+ 	Scenario Outline: Validating the title and url of the following link
+    Given user is on the home page
+    When user clicks on the '<Link>'
+    Then validate that page navigates to the '<url>' and title contains '<title>'
+
+    Examples: 
+      | Link        | url                                                            | title                         |
+      | Motors      | https://www.ebay.com/b/Auto-Parts-and-Vehicles/6000/bn_1865334 | eBay Motors                   |
+      | Electronics | https://www.ebay.com/b/Electronics/bn_7000259124               | Electronics products for sale |
+      | Toys        | https://www.ebay.com/b/Toys-Hobbies/220/bn_1865497             | Toys & Hobbies                |  
+ 
+ 
+ H O O K S ;
+   
+ @Before  and @After - Global Hooks [[only for before hooks ]are not Always executed first , it depends on the order of code written]
+ 
+ Scenario tagged Hooks -
+ 
+ 		Are the hooks in which the scenraio are tagged and hooks with the tag name will be present 
+ 		[are not Always executed first , it depends on the order of code written]
+ 		After hooks are always executed first if the order is at last [it does not depends on the order they are opposite first inoreder means executed at last last i order means executed first]
+ 		
+Example :
+ @Book @search
+ Scenario: Search for book 
+ Given
+ when
+ 
+ Hooks - 
+Before(@search)
+public void setCookies(){
+
+		System.out.println(" I will be executed before the Scenario which as tag name @search");
+}
+ 
+Priortizing the hooks order :
+
+	[[[The Hooks with the order 0 will be executed at the first]]]
+ 
+ @Before(order=1)
+ @After(order=1) [executed at 1st]
+ @Before(value = "@search" , order = 0)  
+ 
+  [[[The code may be in which ever order but only the hooks with order value 0 will be executed at the first]]]
+   
+   
+ C U C U M B E R  T A G S
+ 
+ "a1 and a2 "  - scenario which has both the a1 and a2 tag will only run 
+"a1 or a2" - Any scenario which has either  a1 or a2 tag will run or if both tags are present will run
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
